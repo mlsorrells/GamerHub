@@ -1,0 +1,515 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+	color:#eee;
+	background:url(./images/page_bg.jpg) repeat-x #323232;
+	font:15px Calibri,Arial,sans-serif;
+	margin:5px;
+}
+
+
+/* Main chat container */
+
+#chatContainer{
+	width:750px;
+	margin:0px auto;
+	position:relative;
+}
+
+
+/* Top Bar */
+
+#chatTopBar{
+	padding:4px;
+	background:url(./images/solid_gray.jpg) repeat-x #d0d0d0;
+	border:1px solid #fff;
+	margin-bottom:10px;
+	position:relative;
+	color:#777;
+	overflow:hidden;
+}
+
+#chatTopBar .nameContainer{
+	float:left;
+	line-height:32px;
+	vertical-align:middle;
+	margin-left:10px;
+}
+
+#currentStatus {
+	display:inline-block;
+	width:16px;
+	height:16px;
+	margin:0 0 0 5px;
+	vertical-align:middle;
+	background:transparent url(./images/status.png) no-repeat 0 0;
+}
+
+#currentStatus.online{
+	background-position: 0 -112px;	
+}
+
+#currentStatus.away{
+	background-position: 0 -128px;	
+}
+
+#currentStatus.sleep{
+	background-position: 0 -144px;	
+}
+
+#chatTopBar img{
+	border:1px solid #111111;
+	float:left;
+	height:32px;
+	margin:0 0 0 0;
+	width:32px;
+	display:block;
+}
+
+#serverRes{
+	float:right;
+	line-height:32px;
+	vertical-align:middle;
+	margin-right:10px;
+	font-size:14px;
+}
+
+#serverRes .status{
+	display:inline-block;
+	width:16px;
+	height:16px;
+	margin:0 0 0 2px;
+	vertical-align:middle;
+	background:transparent url(./images/status.png) no-repeat 0 0;
+}
+
+#serverRes .init{
+	background-position: 0 0;	
+}
+
+#serverRes .signin{
+	background-position: 0 -16px;	
+}
+
+#serverRes .send{
+	background-position: 0 -32px;	
+}
+
+#serverRes .check{
+	background-position: 0 -48px;	
+}
+
+#serverRes .sleep{
+	background-position: 0 -64px;	
+}
+
+#serverRes .signout{
+	background-position: 0 -80px;	
+}
+
+#serverRes .error{
+	background-position: 0 -96px;	
+}
+
+#serverRes .queue,
+#serverRes .reconnect{
+	font-size:12px;
+	padding-left:2px;
+	color:#FF0000;
+}
+
+#chatTopBar #signinout{
+	margin-left:10px;
+}
+
+#chatTopBar .fblogin{
+	font-family:"Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+	padding: 1px 4px 1px 28px;
+	background:#5B74A8 url(./images/fb_button.png) no-repeat 0 0;
+	border:1px solid #29447E;
+	border-bottom-color:#1A356E;
+	color:#FFFFFF;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+
+/* Chats */
+
+#chatBox{
+	height:400px;
+	width:auto;
+	margin:0 165px 20px 0;
+	overflow:auto;
+}
+
+#chatBox .errorMessage{
+	font-family:monospace;
+	color:#FFFFFF;
+	background-color:#FF0000;
+	line-height:20px;
+	margin:0 0 10px 0;
+	padding:5px;
+}
+
+#chatBox .signinMessage{
+	text-align:center;
+	vertical-align:middle;
+	margin:170px 0 0 0;
+}
+
+.chat{
+	background:url(./images/chat_line_bg.jpg) repeat-x #d5d5d5;
+	min-height:28px;
+	padding:2px;
+	border:1px solid #FFFFFF;
+	position:relative;
+	margin:0 1px 10px 0;
+}
+
+.chat:last-child{
+	margin-bottom:0;
+}
+
+.chat .avatar{
+	display:inline-block;
+	font-size:15px;
+	vertical-align:top;
+}
+
+.avatar img{
+	border:none;
+	height:26px;
+	margin:0 5px 0 2px;
+	width:26px;
+}
+
+.chat .text{
+	color:#444444;
+	display:inline-block;
+	font-size:15px;
+	vertical-align:middle;
+	width:520px;
+	padding:0;
+	line-height:1.3;
+	word-wrap:break-word;
+}
+
+.chat .time{
+	position:absolute;
+	right:10px;
+	top:5px;
+	font-size:11px;
+	color:#777777;
+}
+
+.text.private{
+	color:#19588A;
+}
+
+.chat .text img{
+	vertical-align:middle;
+}
+
+.text .user{
+	margin-right:5px;
+}
+
+.text .grp_bot{
+	color:#777777;
+}
+
+.text .grp_member{
+	color:#444444;
+}
+
+.text .grp_sa{
+	color:#E70F0F;
+}
+
+.text .grp_admin{
+	color:#C608CE;
+}
+
+.text .grp_mod{
+	color:#E98A10;
+}
+
+.text .note{
+	color:#E70000;
+}
+
+.text .greeting{
+	color:#459903;
+}
+
+.text .banlist,
+.text .kicklist,
+.text .users,
+.text .groups,
+.text .rooms,
+.text .help{
+	width:100%;
+	border-spacing:0;
+	border-collapse:collapse;
+}
+
+.text .banlist th,
+.text .kicklist th,
+.text .users th,
+.text .groups th,
+.text .rooms th,
+.text .help th{
+	color:#FFFFFF;
+	padding:1px 4px;
+	background-color:#222222;
+	font-weight:bold;
+	text-align:left;
+	border:solid 1px #FFFFFF;
+}
+
+.text .banlist td,
+.text .kicklist td,
+.text .users td,
+.text .groups td,
+.text .rooms td,
+.text .help td{
+	padding:1px 4px;
+	color:#666666;
+	font-weight:normal;
+	border:solid 1px #FFFFFF;
+	vertical-align:top;
+}
+
+.text .announcement{
+	color:#222222;
+	background-color:#FFD700;
+	display:block;
+	padding:4px;
+}
+
+.text a{
+	color:#0282FF;
+}
+
+.text a:hover{
+	color:#87CEFA;
+}
+
+
+/* Chat User Area */
+
+#usersOnline{
+	background-color:#202020;
+	border:1px solid #111111;
+	height:400px;
+	position:absolute;
+	right:0;
+	top:56px;
+	overflow:auto;
+	width:155px;
+}
+
+#usersOnline .room{
+	display:block;
+	position:relative;
+	top:0px;
+	clear:both;
+	margin:2px 2px 4px 2px;
+	padding:0;
+	border-bottom:2px solid #4169E1;
+}
+
+#usersOnline .group{
+	display:block;
+	position:relative;
+	top:4px;
+	clear:both;
+	margin:0px 4px;
+	padding:0 2px 1px 5px;
+	border:1px solid;
+	border-radius:2px;
+	text-transform:capitalize;
+}
+
+#usersOnline img{
+	border:2px solid #111111;
+	float:left;
+	height:32px;
+	margin:10px 0 0 10px;
+	width:32px;
+	display:block;
+	cursor:pointer;
+	border-radius:2px;
+}
+
+#usersOnline .away{
+	opacity:0.3;
+}
+
+#usersOnline .online{
+	opacity:1;
+}
+
+#usersOnline .grp_guest{
+	color:#666666;
+	border-color:#F5F5F5;
+	background-color:#F5F5F5;
+}
+
+#usersOnline .grp_member{
+	border-color:#444444;
+	background-color:#444444;
+}
+
+#usersOnline .grp_sa{
+	border-color:#E70F0F;
+	background-color:#E70F0F;
+}
+
+#usersOnline .grp_admin{
+	border-color:#C608CE;
+	background-color:#C608CE;
+}
+
+#usersOnline .grp_mod{
+	border-color:#E98A10;
+	background-color:#E98A10;
+}
+
+/* Bottom Bar */
+
+#chatBottomBar{
+	background:url(./images/solid_gray.jpg) repeat-x #d0d0d0;
+	position:relative;
+	padding:10px;
+	border:1px solid #fff;
+	font:13px/26px Calibri,Arial,sans-serif;
+	color:#777;
+}
+
+#chatBottomBar .tip{
+	position:absolute;
+	width:0;
+	height:0;
+	border:10px solid transparent;
+	border-bottom-color:#eeeeee;
+	top:-20px;
+	left:20px;
+}
+
+#chatContainer input{
+	background:url(./images/input_bg.jpg) repeat-x #dcdcdc;
+	height:26px;
+	border:1px solid;
+	border-color:#c1c1c1 #eee #eee #c1c1c1;
+	padding:0 5px;
+	margin-right:5px;
+	width:185px;
+	outline:none;
+}
+
+#chatContainer #toUser {
+	width:400px;
+}
+
+#pEmotions{
+	margin:0px;
+	padding:2px;
+	float:left;
+	position:relative;
+}
+
+#pEmotions img, #extraEmotions img{
+	margin-right:3px;
+	cursor:pointer;
+	width:16px;
+	vertical-align:middle;
+}
+
+#imgExtraEmotions{
+	margin-left:10px;
+}
+
+#extraEmotions{
+	padding:4px;
+	position:absolute;
+	z-index:1000;
+	width:200px;
+	height:auto;
+	max-height:400px;
+	overflow:auto;
+	border:1px solid #111111;
+	background-color:#202020;
+	right:5px;
+	bottom:25px;
+}
+
+#pMessage{
+	width:auto;
+	margin:0 165px 0  0;
+	clear:left;
+	overflow:hidden;
+}
+
+#pMessage #message{
+	width:100%;
+}
+
+#chatContainer  #send{
+	top: -29px;
+	position: relative;
+	margin-left: -160px;
+	left: 100%;
+	float: left;
+}
+
+/* Additional styles */
+
+#chatContainer .blueButton{
+	background:url(./images/button_blue.png) no-repeat;
+	border:none !important;
+	color:#516D7F !important;
+	display:inline-block;
+	font-size:13px;
+	height:29px;
+	text-align:center;
+	width:75px;
+	margin:0;
+	cursor:pointer;
+}
+
+#chatContainer .blueButton:hover{
+	background-position:left bottom;
+}
+
+#usersOnline .count{
+	clear:both;
+	font-size:12px;
+	padding:10px;
+	text-align:center;
+}
+
+#usersOnline .count{
+	font-size:11px;
+}
+
+.copyright{
+	color:#EEEEEE;
+	font-weight:normal;
+	font-family:sans-serif;
+	font-size:11px;
+}
+
+.copyright a{
+	color:dodgerBlue;
+	text-decoration:underline;
+}
+
+
+.rounded{
+	border-radius:4px;
+}

@@ -1,0 +1,44 @@
+Changes in ChatBox 6.1.6
+Latest update 2013-08-01 06:35
+
+1- Feature: multi-room support tweak (config.php, core.php, client_config.php, client.js)
+2- Feature: new command to display available rooms and to change current room (commands.php, config.php)
+3- Feature: new client configuration REQUEST_ERROR_RETRIES (client.js, client_config.php, chat.css)
+4- Feature: new client configuration REQUEST_TIMEOUT (client.js, client_config.php)
+5- Add room name to online users panel (client.js, chat.css)
+6- Add Re-Connect link if the ajax failed to get the response (client.js)
+7- Add Timeout handler for ajax request (ajax.js, client.js)
+8- Add user current status next to user name (client.js, chat.css)
+9- Bug Fixed: sometimes online users status changed due to no file modification change detected (core.php)
+10- Bug Fixed: ajax calls ErrorHandler twice in case of server error and ResponseFormat is "json" due to JSON parsing error (ajax.js)
+11- Bug Fixed: ajax updates Data property to name/value pairs (ajax.js)
+12- Bug Fixed: sometimes can't generate local time due to bad timezone (core.php, config.php)
+13- BUG Fixed: online users / incorrect group order (core.php)
+14- BUG Fixed: online users list not updated for users while not sending new messages and another user entered the AFK mode (core.php)
+
+Changes in ChatBox 6.1.5
+Latest update 2013-06-06 11:45
+
+1- Bug fixed: when enabling INIT_SCRIPT it's re-signing in automatically after signing out, (affected files: client.js, server.php)
+2- Add new config ALLOW_EMOTIONS under the [Toggle Feature on/off] in the config.php file to facilitate enabling/disabling emotions (affected files: config.php, client_config.php)
+3- Bug fixed: AFK and OFFLINE stopped working after applying the file modified check (affected files: config.php, core.php, server.php)
+
+Changes in ChatBox 6.1.4
+Last Update: 2013-06-05 04:15
+
+1- Better REGEX for censored words, now it shows first and last characters and replaces remaining ones with stars
+2- Check the ROOM_FILE and ONLINE_FILE for modification date to predict changes and then decide whether or not to load its contents
+3- Organize users per group inside the online-users list
+4- Add INIT_SCRIPT configuration under file paths to specify a script to be executed before initiating the chatbox which will allow us to perform some tasks like retrieving user's login info using some APIs (i.e Facebook API)
+5- Add new file fb_init.php to save Facebook user login info to corresponding sessions in order to automate the sign in operation (the path to this file must be assigned to INIT_SCRIPT configuration)
+5- Add new function (authAlgo) to facilitate changing the authentication algorithm
+6- Add configurations for GUEST_GROUP, GUEST_USERNAME and GUEST_DISPLAY_NAME
+7- Fix some typos
+
+Changes in ChatBox 6.1.3
+Last Update: 2013-05-30 14:50
+
+1- Add new command (\alias) which allow member to change their display name, and this requires a new data file to be created (this can be configured in the config.php file)
+2- Add configurations for BOT_GROUP and BOT_DISPLAY_NAME
+3- Add new configuration PUBLIC_GREETING to display the member join greeting message to all users
+4- CSS is modified to fit the chat box container width

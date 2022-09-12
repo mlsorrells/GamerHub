@@ -1,0 +1,7 @@
+greetings <b class="grp_{group}">{user_display}</b>
+hello  <b class="grp_{group}">{group}/{username}</b>
+good day <b class="grp_{group}">{group}</b>
+howdy <b class="grp_{group}">{username}</b>
+What a nice day <b class="grp_{group}">{user_display}</b>
+Hey <b class="grp_{group}">{user_display}</b> or do you prefer to call you <b>{username}</b>...
+Welcome back {user_display} to <b>{room}</b> Room

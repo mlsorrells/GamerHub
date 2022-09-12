@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GamerHub - Chat</title>
+<link rel="stylesheet" type="text/css" href="./chat.css">
+<script type="text/javascript" src="./js/ajax.js"></script>
+<script type="text/javascript" src="./js/client.js"></script>
+</head>
+
+<body onload="initiateChatBox()">
+<center>
+<h1>GamerHub Chat</h1>
+Type \help for help.<br/>
+<button onclick="window.location='/'">Home</button>
+</center>
+<div id="chatContainer">
+    <div id="chatTopBar" class="rounded">
+		<div id="currentUser"></div>
+		<input id="signinout" type="button" class="blueButton" value="Sign in" />
+		<div id="serverRes">...</a></div>
+	</div>
+    <div id="chatBox"></div>
+    
+    <div id="usersOnline" class="rounded"></div>
+    <div id="chatBottomBar" class="rounded">
+    	<div class="tip"></div>
+               
+        <form id="messageForm" method="post" onsubmit="sendMessage();return false;">
+            <p>
+				Private message to <input id="touser" type="text" class="rounded" />
+				<input type="button" class="blueButton" value="To all" onclick="clearToUser()" />
+			</p>
+			<p id="pEmotions"></p>
+			
+			<p id="pMessage">
+				<input id="message" class="rounded" maxlength="255" />
+			</p>
+			<input id="send" type="submit" class="blueButton" value="Submit" />
+        </form>
+        
+    </div>
+</div>
+
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" id="soundPlayer" width="0" height="0">
+<param name="movie" value="./soundPlayer.swf"><param name = "allowScriptAccess" value = "always" />
+<embed type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" name="soundPlayer" width="0" height="0" src="./soundPlayer.swf" allowScriptAccess="always">
+</embed>
+</object>
+</body>
+</html>

@@ -1,0 +1,34 @@
+body{
+background-color:white;
+color:black;
+width:100%;
+max-width:340px;
+}
+.inner{
+border:#565051 1px solid;
+}
+.header{
+color:black;
+border:black 2px dashed;
+}
+.gamehead{
+background-color:grey;
+border:black 1px solid;
+color:white;
+}
+.banned{
+background-color:red;
+border: black 1px solid;
+border-radius:12px;
+width:100%;
+color:white;
+}
+.menu{
+border:black 1px solid;
+}
+.like{
+background-color:#A9A9A9;
+color:white;
+border:black 1px solid;
+width:50%;
+}
